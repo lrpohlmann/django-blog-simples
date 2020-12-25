@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+**/config_secreta.py
+anotacoes.txt
+venv/
+*.pyc
+__pycache__/
+.vscode/
