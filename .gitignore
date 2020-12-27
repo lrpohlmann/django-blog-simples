@@ -1,5 +1,7 @@
 # created by virtualenv automatically
 **/config_secreta.py
+htmlcov/
+.coverage
 anotacoes.txt
 venv/
 *.pyc
