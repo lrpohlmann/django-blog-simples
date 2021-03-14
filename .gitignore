@@ -7,3 +7,6 @@ venv/
 *.pyc
 __pycache__/
 .vscode/
+workspace.code-workspace
+*.sqlite3
+*.db

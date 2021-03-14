@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo-principal %}
+<h2>Posts mais recentes</h2>
+{% include 'partials/posts_flex_container.html' %}
+{% include 'partials/_divisor.html' %}
+<h2>Posts por assunto</h2>
+{% include 'partials/link_flex_container.html' with link_class="link-flex-container-element-home" %}
+{% endblock %}

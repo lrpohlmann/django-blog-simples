@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo-principal %}
+<h2>Autores</h2>
+<section class='autores-flex-container'>
+    {% for autor in autores %}
+    <article class='autor-container'>
+        <div class='autor-image' style="background-image: url({{autor.imagem.url}});"></div>
+        <div class='autor-description'>
+            <h3>{{autor.usuario.get_full_name}}</h3>
+            {{autor.descricao|linebreaks}}
+        </div>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

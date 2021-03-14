@@ -1,0 +1,39 @@
+{% load static %}
+
+<div class='link-flex-container'>
+
+</div>
+<script>
+    function criarLinksAssuntos(texto){
+        let aElement = document.createElement('a');
+        aElement.textContent = texto;
+        aElement.className = "{{link_class}}";
+        url = "{% url 'posts:assunto_root' %}" + texto;
+        aElement.setAttribute('href', url);
+
+        return aElement
+    }
+
+    function appendLinkAssuntos(link){
+        let linkFlexContainer = document.querySelector('.link-flex-container');
+        linkFlexContainer.appendChild(link);
+    }
+
+    async function getAssuntos(){
+        let response = await fetch("http://127.0.0.1:8000{% url 'posts:assuntos_get_json' %}");
+        let assuntos_json = await response.json();
+        return assuntos_json;
+    }
+
+    async function adicionarAssuntosNavLateral(){
+        let assuntos_json = await getAssuntos()
+        let length = assuntos_json.length;
+        for (let i = 0; i<length; i++){
+            let assunto = assuntos_json[i]['fields']['assunto'];
+            let link = criarLinksAssuntos(assunto);
+            appendLinkAssuntos(link);
+        }
+    }
+
+    adicionarAssuntosNavLateral();
+</script>

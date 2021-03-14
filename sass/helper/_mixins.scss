@@ -1,0 +1,8 @@
+@mixin link-color-transition($inicial, $final){
+    color: $inicial;
+
+    &:hover{
+        color: $final;
+        transition: color 0.5s;
+    }
+}

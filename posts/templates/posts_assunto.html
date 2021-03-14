@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo-principal %}
+<h2>Posts sobre '{{assunto}}'</h2>
+{% include 'partials/posts_flex_container.html' %}
+{% endblock %}

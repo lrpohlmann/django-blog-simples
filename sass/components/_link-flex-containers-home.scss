@@ -1,0 +1,57 @@
+.link-flex-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.link-flex-container-element-home{
+    display: block;
+    border-radius: 15px;
+    flex-basis: 6rem;
+    height: 3rem;
+    color: white;
+    text-decoration: none;
+    background-color: $light-purple;
+    padding: 5px;
+}
+
+@keyframes assunto{
+    0% {transform: translateY(0px)}
+    25% {transform: translateY(-2.5px)}
+    50% {transform: translateY(-5px)}
+    75% {transform: translateY(-2.5px)}
+    100% {transform: translateY(0px)}
+}
+
+.link-flex-container-element-home:hover{
+    animation-name: assunto;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    transform: translateY(0px);
+    color: white;
+    transition: letter-spacing 1s;
+    letter-spacing: 0.4rem;
+}
+
+.link-flex-container-element-lateral{
+    text-decoration: none;
+    background-color: aliceblue;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: aliceblue;
+    border-radius: 5px;
+    margin: 0 0 5px;
+    color: $gray;
+}
+
+.link-flex-container-element-lateral:hover{
+    animation-name: assunto;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    transform: translateY(0px);  
+}
+
+
+.link-flex-container-element-home + a, .link-flex-container-element-lateral + a{
+    margin-left: 5px;
+}

@@ -18,6 +18,9 @@ class PostModel(models.Model):
     autor = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     imagem = models.ImageField(upload_to='post/')
 
+    class Meta:
+        ordering = ['-data_criacao']
+
     def __str__(self):
         return self.titulo
 

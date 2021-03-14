@@ -1,0 +1,39 @@
+.header{
+    grid-area: header;
+    display: grid;
+    grid-template-rows: .2fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+.header-nav{
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $gray;
+}
+
+.header-nav-link{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin: 5px;
+    color: $cream;
+}
+
+.header-nav-link:hover{
+    transition: color .5s;
+    color: $charcoal;
+}
+
+.header-title{
+    grid-row: 2/3;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title h1{
+    color: $gray;
+}

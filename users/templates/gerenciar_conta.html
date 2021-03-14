@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo-principal %}
+<h2>Gerenciar Conta</h2>
+<ol>
+    <li><a href="{% url 'users:mudar_senha' %}">Mudar senha</a></li>
+</ol>
+{% endblock %}

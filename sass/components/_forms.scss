@@ -1,0 +1,27 @@
+form{
+
+    p{
+        display: grid;
+        grid-template-columns: 7rem 0.5fr;
+        margin: 0 0 1rem;
+
+        label{
+            grid-column: 1/2;
+        }
+        
+        span{
+            grid-column: 1/2;
+        }
+
+        input{
+            grid-column: 2/3;
+        }
+        textarea{
+            grid-column: 2/3;
+        }
+    }
+
+    button{
+
+    }
+}

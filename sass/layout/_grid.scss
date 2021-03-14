@@ -1,0 +1,10 @@
+.body-grid{
+    display: grid;
+    grid-template-areas:
+    "header header header header"
+    "aside main main lateral"
+    "footer footer footer footer";
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-rows: 15rem minmax(500px, 1fr) 7rem;
+    gap: 5px 5px;
+}

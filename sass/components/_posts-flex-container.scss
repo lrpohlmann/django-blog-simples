@@ -1,0 +1,93 @@
+@use '../helper/mixins';
+
+.posts-flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.post-container{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    height: 20rem;
+    margin: 5px;
+}
+
+.post-container-flex-config{
+    flex: 0 0 17rem;
+}
+
+@media (max-width: 1320px) {
+    .post-container-flex-config{
+        flex: 1 1 17rem;
+    }
+}
+
+.post-image-container{
+    grid-row: 1/2;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.post-description{
+    grid-row: 2/3;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+.post-title{
+    font-size: 1.3rem;
+}
+
+.post-title a{
+    color: $charcoal;
+    text-decoration: none;
+}
+
+.post-title a:hover{
+    text-decoration: underline;
+}
+
+.post-data{
+    color: rgb(80, 85, 114);
+}
+
+.post-link{
+   @include link-color-transition($light-purple, $super-light-purple);
+}
+
+.paginator{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $light-slate;
+    border-radius: 15px;
+}
+
+.paginator-link{
+    padding: 5px;
+    margin: 0 5px;
+    display: inline-block;
+    border: 1px outset $gray;
+    border-radius: 15px;
+    background: $slate;
+}
+
+.paginator-link a{
+    text-decoration: none;
+    color: white;
+}
+
+.paginator-link:active{
+    border: 1px inset $gray;
+}
+
+.paginator-page-number{
+    color: $gray;
+}

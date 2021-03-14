@@ -1,0 +1,30 @@
+@use '../helper/mixins';
+
+.post-image-container{
+    display: flex;
+    justify-content: center;
+}
+
+.post-especifico-title{
+    margin-bottom: 0;
+}
+
+.post-especifico-data{
+    margin: 0 0 2rem;
+}
+
+.post-especifico-content{
+
+}
+
+.post-especifico-data-divisor{
+    font-weight: 700;
+}
+
+.post-especifico-section{
+    margin: 0 0 3rem;
+}
+
+.post-especifico-link{
+    @include link-color-transition($light-purple, $super-light-purple);
+}

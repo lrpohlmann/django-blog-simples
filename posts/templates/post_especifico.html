@@ -1,0 +1,72 @@
+{% extends 'base-div-lateral.html' %}
+{% load static %}
+
+{% block conteudo-principal %}
+<section class='post-especifico-section'>
+    <article>
+        <h2 class='post-especifico-title'>{{post.titulo}}</h2>
+        <div class='post-especifico-data'>
+            <span>por: <a class='post-especifico-link' href="#">{{post.autor}}</a></span>
+            <span class='post-especifico-data-divisor'>|</span>
+            <span><time datetime="{{post.data_criacao|date:'Y-m-d'}}">{{post.data_criacao|date:'d/m/Y'}}</time></span>
+            {% if post.data_criacao != post.data_alteracao %}
+            <span class='post-especifico-data-divisor'>|</span>
+            <span>alterado em: {{post.data_alteracao}}</span>
+            {% endif %}
+        </div>
+        <div style="background-image: url({{post.imagem.url}});"></div>
+        <div class='post-especifico-content'>{{post.corpo|safe|linebreaks}}</div>
+        <div>
+            {% for assunto in post.assunto.all %}
+            <a href="#">{{assunto.assunto}} </a>
+            {% endfor %}
+        </div>
+    </article>
+</section>
+
+<section class='comment-section'>
+    <h3>Comentários</h3>
+
+    {% if user.is_authenticated %}
+        <form action="{{request.path}}" method='POST'>
+            {% csrf_token %}
+            {{comentario_form.corpo.errors}}
+            <p>
+                <span>Realize um comentário:</span>
+                {{comentario_form.corpo}}
+            </p>
+            <button type='submit'>Enviar</button>
+        </form>
+    {% else %}
+        <p>Faça <a href="{% url 'users:login' %}">login</a> para comentar.</p>
+    {% endif %}
+
+    <!--<p>{{post.comentariomodel__count}} comentário{{post.comentariomodel__count|pluralize}}</p>-->
+    
+    {% if comentarios %}
+    <div class='comments-container'>
+        {% for coment in comentarios %}
+            <div class='comment-especifico'>
+                <span class='comment-user'>{{coment.autor.username}}</span>
+                <span>|</span>
+                <span class='comment-date'>{{coment.data_criacao|date:'d-m-Y'}}</span>
+                <p class='comment-corpo'>{{coment.corpo}}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+<script>
+    function adicionarClasseNoParent() {
+        let nodeList = document.querySelectorAll('img');
+        for (let node of nodeList) {
+            parent = node.parentNode;
+            if (parent.tagName == 'P'){
+                parent.className = 'post-image-container';
+            }
+        }
+    }
+    
+    adicionarClasseNoParent();
+</script>
+{% endblock %}

@@ -1,0 +1,11 @@
+.main-content{
+    grid-area: main;
+    background-color: white;
+    border-radius: 25px;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+.main-content h1,h2,h3,h4{
+    color: $charcoal;
+}

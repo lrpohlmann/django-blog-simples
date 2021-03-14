@@ -1,0 +1,9 @@
+@use 'sass:color';
+
+$cream: #DFDBD0;
+$gray: #585240;
+$slate: #8A9EA0;
+$light-slate: color.adjust($slate, $lightness: 30%);
+$charcoal: #2A2E30;
+$light-purple: #945194;
+$super-light-purple: color.adjust($light-purple, $lightness: 30%)

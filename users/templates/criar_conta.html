@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo-principal %}
+<form action="{% url 'users:criar_conta' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Logar</button>
+</form>
+{% endblock %}

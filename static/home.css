@@ -1,0 +1,48 @@
+.link-flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.link-flex-container-element {
+  display: block;
+  border-radius: 15px;
+  flex-basis: 6rem;
+  height: 3rem;
+  color: white;
+  text-decoration: none;
+  background-color: #945194;
+  padding: 5px;
+}
+
+@keyframes assunto {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-2.5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(-2.5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.link-flex-container-element:hover {
+  animation-name: assunto;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  transform: translateY(0px);
+  color: white;
+  transition: letter-spacing 1s;
+  letter-spacing: 0.4rem;
+}
+
+.link-flex-container-element + a {
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=home.css.map */

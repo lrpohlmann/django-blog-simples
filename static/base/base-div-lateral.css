@@ -1,0 +1,64 @@
+.div-lateral {
+  grid-area: lateral;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 5px;
+}
+
+.div-lateral-element {
+  padding: 10px;
+  border-radius: 25px;
+  background: #8A9EA0;
+}
+
+.div-lateral-title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.link-flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.link-flex-container-element {
+  text-decoration: none;
+  background-color: aliceblue;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: aliceblue;
+  border-radius: 5px;
+  margin: 0 0 5px;
+  color: #585240;
+}
+
+@keyframes assunto {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-2.5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(-2.5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.link-flex-container-element:hover {
+  animation-name: assunto;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  transform: translateY(0px);
+}
+
+.link-flex-container-element + a {
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=base-div-lateral.css.map */

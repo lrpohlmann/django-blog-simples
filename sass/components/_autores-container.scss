@@ -1,0 +1,29 @@
+.autores-flex-container{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.autor-container{
+    display: grid;
+    grid-template-columns: [column-line1] .5fr [column-line2] 1fr [column-line3];
+    grid-template-rows: 12rem;
+    gap: 5px;
+    margin: 0 0 1rem;
+}
+
+.autor-container:nth-child(even){
+    grid-template-columns: [column-line3] 1fr [column-line2] .5fr [column-line1];
+}
+
+.autor-image{
+    grid-column: column-line1 / column-line2;
+    grid-row: 1/2;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.autor-description{
+    grid-column: column-line2 / column-line3;
+    grid-row: 1/2;
+}

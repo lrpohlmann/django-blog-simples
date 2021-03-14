@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.static import static
+from blog import settings
+
+from posts.views import getPaginaHome
+from users.views import get_pagina_de_lista_de_autores
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', getPaginaHome, name='home'),
+    path('posts/', include('posts.urls', namespace='posts')),
+    path('autores/', get_pagina_de_lista_de_autores, name='autores'),
+    path('usuarios/', include('users.urls', namespace='users')),
+    path('summernote/', include('django_summernote.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

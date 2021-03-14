@@ -1,0 +1,17 @@
+.div-lateral{
+    grid-area: lateral;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0 5px;
+}
+
+.div-lateral-element{
+    padding: 10px;
+    border-radius: 25px;
+    background: $slate;
+}
+
+.div-lateral-title{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
